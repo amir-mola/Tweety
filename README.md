@@ -1,4 +1,4 @@
-## Team:Tweety
+## Team: Tweety
 ### Members: 
 Conrad Ciszek, Amir Mola, Jose Becerra, Tejas Bharadwaj
 
