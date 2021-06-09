@@ -4,12 +4,13 @@ Conrad Ciszek, Amir Mola, Jose Becerra, Tejas Bharadwaj
 
 
 1. [Presentation](https://homes.cs.washington.edu/~amirmola/files/zoom_0.mp4)
-2. [About](#about)
-3. [Upsampling](#upsampling)
-4. [Pre-Trained Models](#models)
-5. [Output Stacking](#stack)
-6. [Ensembling](#Ensembling)
-7. [Conclusion](#final)
+2. [Code](https://github.com/amir-mola/Tweety)
+3. [About](#about)
+4. [Upsampling](#upsampling)
+5. [Pre-Trained Models](#models)
+6. [Output Stacking](#stack)
+7. [Ensembling](#Ensembling)
+8. [Conclusion](#final)
 
 
 ## About the project/competition: <a name="about"></a>
@@ -57,6 +58,6 @@ Now that we have tried training 4 different models, we wanted to see what would 
 Surprised by the overfitting of the previous method, we decided to still use multiple models for inference but instead of stacking their outputs, we simply take the average of their outputs. In other words, for each given image, we get the output tensor of size 555 from 3 models (resnet151, densenet169, resnext) and then take the average of those 3 tensors. This way each of these models' probability is contributing equally to the final probability tensor, which we take the max and determine the class of the given image. Using this method, we arrived at our all time best accuracy of 0.831. Unfortunately we were not able to improve upon this accuracy no matter which model or additional methods we proposed.
 
 ## Conclusion: <a name="final"></a>
-What we learned during this project is that machine learning with images takes a lot of time and a lot of computing power. We were primarily using colab for most of the project and started to hit walls with the gpu times. We learned about utilizing various techniques such as upsamples and ensembling as described above. For a few of us it was our first time using Pytorch as well which was an interesting experience. 
+By working on this project, we were able to learn more about various techniques and models that are used in research for computer vision tasks. None of us have ever worked with pre-trained computer vision models and being able to work and learn with these models was a great learning experience for us. We learned about utilizing various techniques such as upsamples and ensembling as described above. For a few of us it was our first time using Pytorch as well which was an interesting experience. 
 	During this project we also ran into some problems. There was the issue of running out of gpu computing time on colab and super long runtimes. To resolve this we had one of our group mates ssh into the CSE servers and utilize their GPUs. Another issue we had was when our model was trying to read a blank image. We believe this came from the transformations not executing correctly with one of the images. Removing that image resolved this issue. An image of the error can be seen below.
 
